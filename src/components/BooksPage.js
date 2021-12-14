@@ -6,28 +6,27 @@ import { Link } from "react-router-dom";
 class BooksPage extends React.Component {
   state = { allBooks: [], currentlyReading: [], wantToRead: [], read: [] };
   updateAllBooks = () => {
-    
-    this.retrieveAll();
+    this.props.retrieveAll();
   };
   componentDidMount() {
-    this.retrieveAll();
+    this.props.retrieveAll();
   }
 
-  retrieveAll = () => {
-    BooksAPI.getAll().then((all) => {
-      const _currentlyReading = all.filter(
-        (book) => book.shelf === "currentlyReading"
-      );
-      const _wantToRead = all.filter((book) => book.shelf === "wantToRead");
-      const _read = all.filter((book) => book.shelf === "read");
-      this.setState({
-        allBooks: all,
-        currentlyReading: _currentlyReading,
-        wantToRead: _wantToRead,
-        read: _read,
-      });
-    });
-  };
+  // retrieveAll = () => {
+  //   BooksAPI.getAll().then((all) => {
+  //     const _currentlyReading = all.filter(
+  //       (book) => book.shelf === "currentlyReading"
+  //     );
+  //     const _wantToRead = all.filter((book) => book.shelf === "wantToRead");
+  //     const _read = all.filter((book) => book.shelf === "read");
+  //     this.setState({
+  //       allBooks: all,
+  //       currentlyReading: _currentlyReading,
+  //       wantToRead: _wantToRead,
+  //       read: _read,
+  //     });
+  //   });
+  // };
   render() {
     return (
       <div className="list-books">
@@ -37,17 +36,17 @@ class BooksPage extends React.Component {
         <BookList
           shelf="currentlyReading"
           updateAllBooks={this.updateAllBooks}
-          books={this.state.currentlyReading}
+          books={this.props.currentlyReading}
         />
         <BookList
           shelf="wantToRead"
           updateAllBooks={this.updateAllBooks}
-          books={this.state.wantToRead}
+          books={this.props.wantToRead}
         />
         <BookList
           shelf="read"
           updateAllBooks={this.updateAllBooks}
-          books={this.state.read}
+          books={this.props.read}
         />
         <div className="open-search">
           <Link to="/search">

@@ -2,8 +2,12 @@ import React from "react";
 
 class ShelfOptions extends React.Component {
   state = { shelf: "none" };
-  
+  componentDidMount() {
+    this.setState({ shelf: this.props.book.shelf });
+    console.log("shelf option", this.props.book.shelf);
+  }
   updateShelf = (event) => {
+    console.log("event.target.value", event.target.value);
     this.setState({ shelf: event.target.value }, () => {
       this.props.updateShelf(this.props.book, this.state.shelf);
       console.log(this.state);
