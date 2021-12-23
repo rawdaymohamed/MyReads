@@ -1,13 +1,10 @@
 # MyReads Project
 
-MyReads is a front end Web app built in React js. It allows users to categorize books in 3 categories, called shelves (currently reading, want to read, and read).
+MyReads is a front end Web app built in React js. It allows users to categorize books into 3 categories, called shelves (currently reading, want to read, and read).
 The application interacts with an [api]("https://reactnd-books-api.udacity.com") to get books names, authors, and images.
 
-
 ![alt text](./imgs/MyReads.png)
-![alt text](./imgs/MyReads-search.png)
-
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+![](./captures/MyReads.gif)
 
 ## TL;DR
 
@@ -91,9 +88,3 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
