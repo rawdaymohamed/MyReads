@@ -4,7 +4,6 @@ MyReads is a front end Web app built in React js. It allows users to categorize 
 The application interacts with an [api]("https://reactnd-books-api.udacity.com") to get books names, authors, and images.
 
 ![alt text](./imgs/MyReads.png)
-![](./captures/MyReads.gif)
 
 ## TL;DR
 
