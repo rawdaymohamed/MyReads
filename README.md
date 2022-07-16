@@ -9,8 +9,8 @@ The application interacts with an [api]("https://reactnd-books-api.udacity.com")
 
 To get started developing right away:
 
-- install all project dependencies with `npm install`
-- start the development server with `npm start`
+- install all project dependencies with `yarn`
+- start the development server with `yarn start`
 
 ## What You're Getting
 
