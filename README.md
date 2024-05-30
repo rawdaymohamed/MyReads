@@ -3,7 +3,7 @@
 MyReads is a front end Web app built in React js. It allows users to categorize books into 3 categories, called shelves (currently reading, want to read, and read).
 The application interacts with an [api]("https://reactnd-books-api.udacity.com") to get books names, authors, and images.
 
-![alt text](./imgs/MyReads.png)
+![alt text](./captures/MyReads.gif)
 
 ## TL;DR
 
