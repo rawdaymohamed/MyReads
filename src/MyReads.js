@@ -34,29 +34,17 @@ class HomePage extends React.Component {
   };
   getSearchResult = (qry) => {
     BooksAPI.search(qry).then((res) => {
-      console.log(typeof res);
-      console.log("myRes", res);
       res = this.getArrayResult(res);
-      console.log("myRes", res);
-      console.log("arr", res);
-
-      // this.setState({
-      //   searchedBooks: res,
-      // });
       this.addShelfToResult(res);
-      console.log(this.state);
     });
   };
   handleChange = (qry) => {
     this.setState({ query: qry });
     this.getSearchResult(qry);
   };
-  addShelfToResult = (res) => {
+  addShelfToResult = (res) => { // res is an array
     const all_books = this.state.allBooks;
     const _searchedBooks = res;
-
-    console.log("all_books", all_books);
-    console.log("searched_books", _searchedBooks);
     if (_searchedBooks === undefined) {
       this.setState({ searchedBooks: [] });
     } else {
@@ -68,14 +56,14 @@ class HomePage extends React.Component {
         });
         return b;
       });
-      console.log("adj", adjusted_books);
       this.setState({ searchedBooks: adjusted_books });
     }
   };
+  // Transform result object to array
   getArrayResult = (obj) => {
     let res = [];
-    if (obj === undefined || obj === {}) return [];
-    for (const [key, value] of Object.entries(obj)) {
+    if (obj === undefined) return [];
+    for (const [, value] of Object.entries(obj)) {
       res.push(value);
     }
     return res;

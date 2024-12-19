@@ -8,13 +8,11 @@ class SearchResult extends React.Component {
         <ol className="books-grid">
           {this.props.searchedBooks.map((bookItem) => (
             <li key={bookItem.id}>
-              {
-                <BookItem
-                  book={bookItem}
-                  updateShelf={this.props.updateShelf}
-                  handleChange={this.props.handleChange}
-                />
-              }
+              <BookItem
+                book={bookItem}
+                updateShelf={this.props.updateShelf}
+                handleChange={this.props.handleChange}
+              />
             </li>
           ))}
         </ol>

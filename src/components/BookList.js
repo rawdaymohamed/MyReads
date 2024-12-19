@@ -13,8 +13,6 @@ class BookList extends React.Component {
   };
   updateShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then((res) => {
-      console.log(res);
-
       this.updateBooks();
     });
   };
@@ -29,15 +27,13 @@ class BookList extends React.Component {
               <ol className="books-grid">
                 {this.props.books.map((book) => (
                   <li key={book.id}>
-                    {
-                      <BookItem
-                        book={book}
-                        bookTitle={book.title}
-                        bookAuthors={book.authors}
-                        imageURL={book.imageLinks.thumbnail}
-                        updateShelf={this.updateShelf}
-                      />
-                    }
+                    <BookItem
+                      book={book}
+                      bookTitle={book.title}
+                      bookAuthors={book.authors}
+                      imageURL={book.imageLinks.thumbnail}
+                      updateShelf={this.updateShelf}
+                    />
                   </li>
                 ))}
               </ol>
